@@ -40,27 +40,39 @@
     object-fit: contain;
 }
 
-.nav-links {
+.nav-links{
     display: flex;
-    gap: 1.3rem;
-    font-size: .8rem;
-    transform: scaleY(1.1);
-    letter-spacing: 4px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
-
 .nav-item {
+    position: relative;
     text-decoration: none;
     color: #333333;
     font-weight: 500;
 }
-.nav-item:hover {
-    color: #061953;
-    text-decoration: underline;
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; 
+    left: 50%;
+    width: 0%;
+    height: 2px;
+    background-color: #061953;
+    transition: width 0.4s ease;
+    transform: translateX(-50%);
 }
 
-.nav-item.active {
+.nav-item:hover::after {
+    width: 100%;
+}
+
+.nav-item:hover {
     color: #061953;
 }
+
 
 .signin-btn {
     padding: 0.5rem 1.5rem;
@@ -104,7 +116,7 @@
     .home-content h1{
         font-size: 3rem;
         transform: scaleY(1);
-        letter-spacing: 2px;
+        letter-spacing: 4px;
     }
     .home-content p{
         text-align: center;
@@ -121,12 +133,12 @@
     }
     .home-content button{
         padding: 0.5rem 3rem;
-        background-color: transparent;
-        color: white;
+        background-color: white;
+        color: #061953;
         border: 1px solid white;
         border-radius: 15px;
         cursor: pointer;
-        font-size: .75rem;
+        font-size: .8rem;
         letter-spacing: 4px;
         text-transform: uppercase;
     }
@@ -202,6 +214,7 @@ footer p{
 .services{
     width: 85%;
     margin: 0 auto;
+    margin-top: 1rem;
     text-align: center;
     padding: 1rem 0;
 }
@@ -217,7 +230,7 @@ footer p{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 2px solid #333;
+    border: 2px solid #3333337e;
     border-top: none;
     border-bottom: none;
     position: relative;
@@ -334,9 +347,13 @@ footer p{
     width: 2px;
     height: 70px;
 }
+.aboutBox:nth-child(3){
+    background-color:#f8f9fa ;
+}
 .aboutBox p:nth-child(2){
     /* border-right:none;
     border-left: #061953 solid 2px; */
+
 }
 .aboutBox {
     opacity: 0;
@@ -348,3 +365,69 @@ footer p{
     opacity: 1;
     transform: translateY(0);
 }
+
+.private-jet-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 80px;
+    gap: 40px;
+    background-color: #f8f9fa;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-width: 50%;
+}
+
+.text-content h2 {
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.text-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.text-content button {
+    align-self: center;
+    background-color: #061953;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    border: 1px solid transparent;
+    width: 200px;
+}
+
+.text-content button:hover {
+    width: 100%; 
+    color: #061953;
+    background-color: white;
+    border-color: #061953;
+}
+
+
+.image-content {
+    flex: 1;
+    max-width: 50%;
+}
+
+.image-content img {
+    width: 100%;
+    border-radius: 4px;
+}
+
